@@ -8,7 +8,8 @@ $(document).ready(function() {
       splitString[index] = "-";
     }
   }
-  $("#result").text(splitString);
+  userInputString = splitString.join("");
+  $("#result").text(userInputString);
   // console.log(splitString);
   });
 });
