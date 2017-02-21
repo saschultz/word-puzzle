@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#form1").submit(function(event) {
+  $("#form1").submit(function() {
   event.preventDefault();
   var userInputString = $("#userString").val();
   var splitString = userInputString.split("");
@@ -8,8 +8,21 @@ $(document).ready(function() {
       splitString[index] = "-";
     }
   }
-  userInputString = splitString.join("");
-  $("#result").text(userInputString);
-  // console.log(splitString);
+  var userInputString2 = splitString.join("");
+  $("#form1").hide();
+  $("#result").text(userInputString2);
+  $("#form2").show();
+
+  $("#form2").submit(function() {
+  event.preventDefault();
+  var userResponse = $("#userAnswer").val();
+
+  if (userInputString === userResponse) {
+    $("#output").text("Great jorb yahoo");
+    }
+    else {
+    $("#output").text("Fail");
+    }
+    });
   });
 });
